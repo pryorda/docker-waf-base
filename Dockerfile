@@ -14,6 +14,7 @@ RUN tar -xvf /nginx-${NGINX_VERSION}.tar.gz && \
       ./configure --enable-standalone-module --disable-mlogc && \
       make && \
       cd /nginx-${NGINX_VERSION} && \
-      ./configure --user=root --group=root --with-debug --with-ipv6 --with-http_ssl_module --add-module=/usr/src/modsecurity/nginx/modsecurity --with-http_ssl_module --without-http_access_module --without-http_auth_basic_module --without-http_autoindex_module --without-http_empty_gif_module --without-http_fastcgi_module --without-http_referer_module --without-http_memcached_module --without-http_scgi_module --without-http_split_clients_module --without-http_ssi_module --without-http_uwsgi_module && \
+      adduser --disabled-password --system --home /var/cache/nginx --shell /sbin/nologin --group nginx && \
+      ./configure --user=nginx --group=nginx --with-debug --with-ipv6 --with-http_ssl_module --add-module=/usr/src/modsecurity/nginx/modsecurity --with-http_ssl_module --without-http_access_module --without-http_auth_basic_module --without-http_autoindex_module --without-http_empty_gif_module --without-http_fastcgi_module --without-http_referer_module --without-http_memcached_module --without-http_scgi_module --without-http_split_clients_module --without-http_ssi_module --without-http_uwsgi_module && \
       make && \
       make install
