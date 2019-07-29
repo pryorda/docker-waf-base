@@ -8,7 +8,7 @@ RUN tar -xvf /nginx-${NGINX_VERSION}.tar.gz && \
       apt-get update && \
       apt-get install -y git libyajl-dev build-essential libpcre3 libpcre3-dev libssl-dev libtool autoconf apache2-dev libxml2-dev libcurl4-openssl-dev automake pkgconf && \
       cd /usr/src/ && \
-      git clone -b nginx_refactoring https://github.com/SpiderLabs/ModSecurity.git /usr/src/modsecurity && \
+      git clone -b v3/master https://github.com/SpiderLabs/ModSecurity.git /usr/src/modsecurity && \
       cd /usr/src/modsecurity && \
       ./autogen.sh && \
       ./configure --enable-standalone-module --with-yajl --disable-mlogc && \
