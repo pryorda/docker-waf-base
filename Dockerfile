@@ -10,7 +10,6 @@ RUN tar -xvf /nginx-${NGINX_VERSION}.tar.gz && \
       cd /usr/src/ && \
       git clone -b v3/master https://github.com/SpiderLabs/ModSecurity.git /usr/src/modsecurity && \
       cd /usr/src/modsecurity && \
-      ./autogen.sh && \
       ./configure --enable-standalone-module --with-yajl --disable-mlogc && \
       make && \
       cd /nginx-${NGINX_VERSION} && \
